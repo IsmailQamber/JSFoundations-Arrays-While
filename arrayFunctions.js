@@ -9,7 +9,12 @@
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
 function isArrayLengthOdd(numbers) {
-  // Your code here
+  
+    if(numbers.length % 2 === 0){
+      return false;
+    }else{
+      return true;
+    }
 }
 
 /**
@@ -23,8 +28,14 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+  
+  if(numbers.length % 2 === 0){
+    return true;
+  }else{
+    return false;
+  }
 }
+
 
 /**
  * addLailaToArray(instructors):
@@ -35,7 +46,9 @@ function isArrayLengthEven(numbers) {
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
 function addLailaToArray(instructors) {
-  // Your code here
+  
+    instructors.push ("Laila");
+    return instructors;
 }
 
 /**
@@ -47,7 +60,9 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+
+    const LastElement = teams.pop();
+      return LastElement;
 }
 
 /**
@@ -60,8 +75,22 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]) -> ["banana", "kiwi"]
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
+
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+
+    if(fruits.length % 2 !== 0 && fruits.length > 2){
+      //Odd
+      while(fruits.length > 0 ){
+        fruits.pop();
+      }
+      return fruits;
+    }else{
+      //Even
+      const LastPosition = fruits.length;
+      const FirstPosition = (fruits.length / 2);
+        return fruits.slice (FirstPosition, LastPosition);
+    }
+    
 }
 
 /**
@@ -78,9 +107,18 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  * - Use string method .endsWith()
  */
+ 
+ 
 function youGottaCalmDown(shout) {
-  // Your code here
+    while(shout.endsWith(`!!`)){
+      shout = shout.slice(0, -1);
+    }
+    return shout;
 }
+// const str = "HI!!!!!";
+// if(str.endsWith(`!`)){
+//   console.log("yes")
+// }else console.log("no")
 
 module.exports = {
   isArrayLengthOdd,
